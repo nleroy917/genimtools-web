@@ -3,11 +3,7 @@ mod utils;
 use wasm_bindgen::prelude::*;
 
 #[wasm_bindgen]
-extern "C" {
-    fn alert(s: &str);
+pub fn greet(name: &str) -> String {
+    format!("Hello, {name}")
 }
 
-#[wasm_bindgen]
-pub fn greet() {
-    alert("Hello, genimtools-web!");
-}
