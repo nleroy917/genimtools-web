@@ -1,13 +1,41 @@
 import Link from 'next/link';
 
-export const Nav = () => {
+type NavItemProps = {
+  href: string;
+  children: React.ReactNode;
+};
+
+const NavItem = (props: NavItemProps) => {
+  const { href, children } = props;
   return (
-    <nav className="p-4 border-b-2 border-black shadow-sm">
-      <div className="flex flex-row items-center">
-        <Link href="/">
-          <h1 className="text-4xl font-extrabold mb-3">🧬🕸️ Genimtools</h1>
-        </Link>
-      </div>
-    </nav>
+    <li className="px-4 py-2 text-gray-800 font-medium hover:text-gray-900 hover:underline">
+      <Link href={href}>{children}</Link>
+    </li>
   );
 };
+
+export default function Nav() {
+  return (
+    <nav className="p-4 border-b-2 border-black shadow-sm">
+      <ul className="flex flex-row items-center justify-between">
+        <Link href="/">
+          <h1 className="text-2xl font-extrabold">🧬🕸️ GENIMTOOLS</h1>
+        </Link>
+        <div className="flex flex-row">
+          <NavItem href="https://github.com/databio/genimtools">
+            <i className="bi bi-github mr-1"></i>
+            GitHub
+          </NavItem>
+          <NavItem href="https://databio.org">
+            <i className="bi bi-building mr-1"></i>
+            Databio
+          </NavItem>
+          <NavItem href="/tokenization">
+            <i className="bi bi-currency-exchange mr-1"></i>
+            Tokenizers
+          </NavItem>
+        </div>
+      </ul>
+    </nav>
+  );
+}

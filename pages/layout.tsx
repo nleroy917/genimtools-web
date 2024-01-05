@@ -1,7 +1,6 @@
 import Head from 'next/head';
-import head from 'next/head';
 import { Fragment } from 'react';
-import { Nav } from './nav';
+import Nav from './nav';
 
 type Props = {
   children: React.ReactNode;
@@ -9,7 +8,7 @@ type Props = {
   description?: string;
 };
 
-export const Layout = (props: Props) => {
+export default function Layout(props: Props) {
   const title = props.title || 'Genimtools web';
   return (
     <Fragment>
@@ -19,7 +18,9 @@ export const Layout = (props: Props) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Nav />
-      <main className="flex min-h-screen max-w-7xl mx-auto w-full">{props.children}</main>
+      <div className="bg-slate-100">
+        <main className="flex flex-col min-h-screen max-w-7xl mx-auto w-full">{props.children}</main>
+      </div>
     </Fragment>
   );
-};
+}
