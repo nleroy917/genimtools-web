@@ -1,84 +1,40 @@
 <div align="center">
 
-  <h1><code>wasm-pack-template</code></h1>
+  <h1>🧬🕸️ genimtools-web</h1>
 
-  <strong>A template for kick starting a Rust and WebAssembly project using <a href="https://github.com/rustwasm/wasm-pack">wasm-pack</a>.</strong>
+<strong>A browser-native, react-based GUI implementation of [genimtools](https://github.com/databio/genimtools) using <a href="https://github.com/rustwasm/wasm-pack">wasm-pack</a>.</strong>
 
-  <p>
-    <a href="https://travis-ci.org/rustwasm/wasm-pack-template"><img src="https://img.shields.io/travis/rustwasm/wasm-pack-template.svg?style=flat-square" alt="Build Status" /></a>
-  </p>
+<sub>Built with 🦀🕸 by <a href="https://rustwasm.github.io/">The Rust and WebAssembly Working Group</a></sub>
 
-  <h3>
-    <a href="https://rustwasm.github.io/docs/wasm-pack/tutorials/npm-browser-packages/index.html">Tutorial</a>
-    <span> | </span>
-    <a href="https://discordapp.com/channels/442252698964721669/443151097398296587">Chat</a>
-  </h3>
-
-  <sub>Built with 🦀🕸 by <a href="https://rustwasm.github.io/">The Rust and WebAssembly Working Group</a></sub>
 </div>
 
 ## About
 
-[**📚 Read this template tutorial! 📚**][template-docs]
+[genimtools](https://github.com/databio/genimtools) is a suite of tools written in rust for performance critical tasks in genomics. This project attempts to provide a browser-native GUI for a more user-friendly experience.
 
-This template is designed for compiling Rust libraries into WebAssembly and
-publishing the resulting package to NPM.
+**There are two core components to this project:**
 
-Be sure to check out [other `wasm-pack` tutorials online][tutorials] for other
-templates and usages of `wasm-pack`.
+1. A library crate that [targets wasm32-unknown-unknown](https://rustwasm.github.io/wasm-bindgen/reference/rust-targets.html) and exposes a javascript API for interacting with genimtools via the browser. It is essentially a binding to genimtools.
+2. A [nextjs](https://nextjs.org/) web app that uses the library crate to provide a user interface for genimtools.
 
-[tutorials]: https://rustwasm.github.io/docs/wasm-pack/tutorials/index.html
-[template-docs]: https://rustwasm.github.io/docs/wasm-pack/tutorials/npm-browser-packages/index.html
+This is very-much a work in progress. The current version is a proof of concept and is not ready for production use.
 
-## 🚴 Usage
+## Development
 
-### 🐑 Use `cargo generate` to Clone this Template
+### Start the `wasm-pack` development server
 
-[Learn more about `cargo generate` here.](https://github.com/ashleygwilliams/cargo-generate)
+You can watch and hot-reload the library crate with the following command:
 
 ```
-cargo generate --git https://github.com/rustwasm/wasm-pack-template.git --name my-project
-cd my-project
+sh wasm_dev.sh
 ```
 
-### 🛠️ Build with `wasm-pack build`
+This rebuilds and reinjects the library crate into the web app on every change.
+
+### Start the `nextjs` development server
+
+You can watch and hot-reload the web app with the following command:
 
 ```
-wasm-pack build
+npm run dev
 ```
-
-### 🔬 Test in Headless Browsers with `wasm-pack test`
-
-```
-wasm-pack test --headless --firefox
-```
-
-### 🎁 Publish to NPM with `wasm-pack publish`
-
-```
-wasm-pack publish
-```
-
-## 🔋 Batteries Included
-
-* [`wasm-bindgen`](https://github.com/rustwasm/wasm-bindgen) for communicating
-  between WebAssembly and JavaScript.
-* [`console_error_panic_hook`](https://github.com/rustwasm/console_error_panic_hook)
-  for logging panic messages to the developer console.
-* `LICENSE-APACHE` and `LICENSE-MIT`: most Rust projects are licensed this way, so these are included for you
-
-## License
-
-Licensed under either of
-
-* Apache License, Version 2.0, ([LICENSE-APACHE](LICENSE-APACHE) or http://www.apache.org/licenses/LICENSE-2.0)
-* MIT license ([LICENSE-MIT](LICENSE-MIT) or http://opensource.org/licenses/MIT)
-
-at your option.
-
-### Contribution
-
-Unless you explicitly state otherwise, any contribution intentionally
-submitted for inclusion in the work by you, as defined in the Apache-2.0
-license, shall be dual licensed as above, without any additional terms or
-conditions.
