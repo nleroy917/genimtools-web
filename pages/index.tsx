@@ -1,47 +1,27 @@
-import { count_regions } from 'genimtools';
-import { useState } from 'react';
+import Link from 'next/link';
+import { Layout } from './layout';
+
+const ToolCard = ({ children }: { children: React.ReactNode }) => {
+  return (
+    <div className="flex flex-col w-full p-4 min-w-72">
+      <div className="text-center shadow-lg flex flex-col w-full border-2 border-black rounded-md p-4 text-xl font-bold hover:shadow-md transition-all">
+        {children}
+      </div>
+    </div>
+  );
+};
 
 export default function Home() {
-  const [inputBed, setInputBed] = useState<string>('');
-  const [universeFile, setUniverseFile] = useState<string>('');
-
   return (
-    <main className="flex min-h-screen flex-col p-24 gap-2">
-      <div className="flex flex-col">
-        <label className="font-bold">1. Select universe</label>
-        <input
-          type="file"
-          className="border-2 border-black rounded-md p-2"
-          onChange={(e) => {
-            const file = e.target.files[0];
-            const reader = new FileReader();
-            reader.onload = (e) => {
-              const text = e.target.result;
-              setUniverseFile(text.toString());
-            };
-            reader.readAsText(file);
-          }}
-        />
+    <Layout>
+      <div className="flex flex-row flex-wrap py-24">
+        <Link href="/tokenization">
+          <ToolCard>💵 Tokenizers</ToolCard>
+        </Link>
+        <Link href="/">
+          <ToolCard>🌌 Universe creation (Coming soon)</ToolCard>
+        </Link>
       </div>
-      <div>
-        <label className="font-bold">2. Select bedfile</label>
-        <input
-          type="file"
-          className="border-2 border-black rounded-md p-2"
-          onChange={(e) => {
-            const file = e.target.files[0];
-            const reader = new FileReader();
-            reader.onload = (e) => {
-              const text = e.target.result;
-              setInputBed(text.toString());
-            };
-            reader.readAsText(file);
-          }}
-        />
-      </div>
-      <div className="flex flex-col">
-        <label className="font-bold">3. Results</label>
-      </div>
-    </main>
+    </Layout>
   );
 }
