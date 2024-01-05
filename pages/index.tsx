@@ -39,14 +39,6 @@ export default function Home() {
           }}
         />
       </div>
-      {/* <div className="flex flex-row gap-2">
-        <button
-          onClick={() => runCount()}
-          className="shadow-inner bg-green-400 border-2 border-black hover:bg-green-500 text-gray-800 font-bold py-2 px-4 rounded-md inline-flex items-center"
-        >
-          Click me
-        </button>
-      </div> */}
       <div className="flex flex-col">
         <label className="font-bold">3. Results</label>
       </div>
