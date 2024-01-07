@@ -145,7 +145,7 @@ impl From<&Path> for Universe {
             // should probably change this to something else,
             // but couldn't figure out how to return a `Result`
             // from a trait implementation
-            Err(e) => panic!("{e}"),
+            Err(e) => panic!("{}", e),
         };
 
         let mut region_to_id = generate_region_to_id_map(&regions);

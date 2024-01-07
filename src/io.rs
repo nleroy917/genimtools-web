@@ -29,3 +29,25 @@ pub fn extract_regions_from_bed_file(path: &Path) -> Result<Vec<Region>, Box<dyn
     }
     Ok(regions)
 }
+
+pub fn bed_string_to_regions(bed_string: &str) -> Result<Vec<Region>, Box<dyn Error>> {
+
+    let mut regions = Vec::new();
+
+    for line in bed_string.split('\n') {
+        let fields: Vec<&str> = line.split('\t').collect();
+
+        let chr = fields[0];
+        let start = fields[1].parse::<u32>()?;
+        let end = fields[2].parse::<u32>()?;
+
+        let region = Region {
+            chr: chr.to_string(),
+            start,
+            end,
+        };
+
+        regions.push(region);
+    }
+    Ok(regions)
+}
