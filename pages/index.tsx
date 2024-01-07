@@ -19,7 +19,7 @@ export default function Home() {
             </Link>{' '}
             is a project by{' '}
             <Link className="text-blue-600 underline" href="https://databio.org">
-              Databio
+              databio
             </Link>
             .
           </p>
