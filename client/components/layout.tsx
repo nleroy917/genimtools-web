@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import { Fragment } from 'react';
 import Nav from './nav';
+import Footer from './footer';
 
 type Props = {
   children: React.ReactNode;
@@ -19,8 +20,9 @@ export default function Layout(props: Props) {
       </Head>
       <Nav />
       <div className="bg-slate-100">
-        <main className="flex flex-col min-h-screen max-w-7xl mx-auto w-full">{props.children}</main>
+        <main className="flex flex-col min-h-[calc(100vh-192px)] max-w-7xl mx-auto w-full">{props.children}</main>
       </div>
+      <Footer />
     </Fragment>
   );
 }

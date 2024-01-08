@@ -2,9 +2,8 @@ import { count_regions, tokenize_bed_file } from 'genimtools';
 import { formatWithCommas } from '@/utils';
 
 import { Fragment, useState } from 'react';
-import Layout from './layout';
+import Layout from '../components/layout';
 import Link from 'next/link';
-
 
 export default function Tokenization() {
   const [inputBed, setInputBed] = useState<string | undefined>(undefined);
@@ -20,7 +19,7 @@ export default function Tokenization() {
 
     setTokenizing(true);
     const tokens = tokenize_bed_file(universeFile!, inputBed!);
-    setTokenizing(false);    
+    setTokenizing(false);
     setTokens(tokens);
   };
 
@@ -86,15 +85,13 @@ export default function Tokenization() {
               className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4 disabled:opacity-70 disabled:hover:bg-blue-500"
               onClick={() => {
                 setTokenizing(true);
-                runTokenization()
+                runTokenization();
                 setTokenizing(false);
               }}
               disabled={!inputBed || !universeFile || tokenizing}
             >
               <i className="bi bi-play-fill mr-1"></i>
-              {
-                tokenizing ? 'Tokenizing...' : 'Tokenize'
-              }
+              {tokenizing ? 'Tokenizing...' : 'Tokenize'}
             </button>
             <button
               className="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded mt-4 disabled:opacity-70 disabled:hover:bg-gray-500"
@@ -105,19 +102,17 @@ export default function Tokenization() {
               }}
               disabled={!tokens}
             >
-              {
-                copied ? (
-                  <Fragment>
-                    <i className="bi bi-clipboard-check mr-1"></i>
-                    Copied!
-                  </Fragment>
-                ) : (
-                  <Fragment>
-                    <i className="bi bi-clipboard mr-1"></i>
-                    Copy
-                  </Fragment>
-                )
-              }
+              {copied ? (
+                <Fragment>
+                  <i className="bi bi-clipboard-check mr-1"></i>
+                  Copied!
+                </Fragment>
+              ) : (
+                <Fragment>
+                  <i className="bi bi-clipboard mr-1"></i>
+                  Copy
+                </Fragment>
+              )}
             </button>
           </div>
         </div>
