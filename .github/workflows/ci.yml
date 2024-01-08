@@ -57,7 +57,7 @@ jobs:
           version: 'latest'
       - name: Build wasm
         run: wasm-pack build --release --target web
-        working-directory: ./genimntools
+        working-directory: ./genimtools
       - name: Setup Pages
         uses: actions/configure-pages@v4
         with:
