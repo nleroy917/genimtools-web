@@ -1,9 +1,10 @@
-import { count_regions, tokenize_bed_file, greet } from 'genimtools';
-import { Fragment, useState } from 'react';
+import { count_regions, tokenize_bed_file } from 'genimtools';
+import { formatWithCommas } from '@/utils';
 
+import { Fragment, useState } from 'react';
 import Layout from './layout';
 import Link from 'next/link';
-import { formatWithCommas } from '@/utils';
+
 
 export default function Tokenization() {
   const [inputBed, setInputBed] = useState<string | undefined>(undefined);
