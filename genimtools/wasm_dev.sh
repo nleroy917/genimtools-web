@@ -2,4 +2,4 @@
 
 cargo watch \
   -w src \
-  -s "rm -rf .next && wasm-pack build && yarn install --force"
+  -s "rm -rf .next && wasm-pack build --release"

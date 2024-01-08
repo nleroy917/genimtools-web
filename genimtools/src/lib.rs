@@ -29,12 +29,13 @@ pub fn count_regions(bed_file: &str) -> u32 {
 }
 
 #[wasm_bindgen]
-pub fn tokenize_bed_file(universe: &str, bed_file: &str) -> String {
+pub async fn tokenize_bed_file(universe: &str, bed_file: &str) -> String {
     
     utils::set_panic_hook();
 
     // convert raw strings to regions
     let universe = io::bed_string_to_regions(universe).unwrap();
+
     let bed_file = io::bed_string_to_regions(bed_file).unwrap();
 
     // create tokenizer
@@ -52,7 +53,6 @@ pub fn tokenize_bed_file(universe: &str, bed_file: &str) -> String {
         tokens_string.push_str(
             format!("{}\t{}\t{}\n", token.chr, token.start, token.end).as_str()
         );
-        tokens_string.push('\n');
     }
 
     tokens_string
