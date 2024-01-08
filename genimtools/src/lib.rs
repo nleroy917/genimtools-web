@@ -29,7 +29,7 @@ pub fn count_regions(bed_file: &str) -> u32 {
 }
 
 #[wasm_bindgen]
-pub async fn tokenize_bed_file(universe: &str, bed_file: &str) -> String {
+pub fn tokenize_bed_file(universe: &str, bed_file: &str) -> String {
     
     utils::set_panic_hook();
 

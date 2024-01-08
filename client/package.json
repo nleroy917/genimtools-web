@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "preview-export": "npx serve@latest out -p 8080"
   },
   "dependencies": {
     "bootstrap-icons": "^1.11.3",

@@ -56,7 +56,7 @@ jobs:
           # Optional version of wasm-pack to install(eg. 'v0.9.1', 'latest')
           version: 'latest'
       - name: Build wasm
-        run: wasm-pack build --release --target web
+        run: wasm-pack build --release
         working-directory: ./genimtools
       - name: Setup Pages
         uses: actions/configure-pages@v4

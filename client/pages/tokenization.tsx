@@ -13,13 +13,13 @@ export default function Tokenization() {
   const [tokenizing, setTokenizing] = useState<boolean>(false);
   const [copied, setCopied] = useState<boolean>(false);
 
-  const runTokenization = async () => {
+  const runTokenization = () => {
     if (!inputBed || !universeFile) alert('Please select a bedfile and universe file');
     if (!inputBed) alert('Please select a bedfile');
     if (!universeFile) alert('Please select a universe file');
 
     setTokenizing(true);
-    const tokens = await tokenize_bed_file(universeFile!, inputBed!);
+    const tokens = tokenize_bed_file(universeFile!, inputBed!);
     setTokenizing(false);    
     setTokens(tokens);
   };

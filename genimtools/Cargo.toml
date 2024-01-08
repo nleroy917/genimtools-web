@@ -1,5 +1,5 @@
 [package]
-name = "genimtools-web"
+name = "genimtools"
 version = "0.1.0"
 authors = ["Nathan LeRoy <NLeRoy917@gmail.com>"]
 edition = "2018"
@@ -19,7 +19,6 @@ rust-lapper = "1.1.0"
 # all the `std::fmt` and `std::panicking` infrastructure, so isn't great for
 # code size when deploying.
 console_error_panic_hook = { version = "0.1.7", optional = true }
-wasm-bindgen-futures = "0.4.39"
 
 [dependencies.web-sys]
 version = "0.3"
