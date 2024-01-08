@@ -18,9 +18,11 @@ export default function Nav() {
   return (
     <nav className="p-4 border-b-2 border-black shadow-sm">
       <ul className="flex flex-row items-center justify-between">
-        <Link href="/">
-          <h1 className="text-2xl font-extrabold">🧬🕸️ GENIMTOOLS</h1>
-        </Link>
+        <li>
+          <Link href="/">
+            <h1 className="text-2xl font-extrabold">🧬🕸️ GENIMTOOLS</h1>
+          </Link>
+        </li>
         <li className="flex">
           <ul className="flex">
             <NavItem href="https://github.com/databio/genimtools">
