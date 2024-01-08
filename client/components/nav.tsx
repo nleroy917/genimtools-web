@@ -21,20 +21,22 @@ export default function Nav() {
         <Link href="/">
           <h1 className="text-2xl font-extrabold">🧬🕸️ GENIMTOOLS</h1>
         </Link>
-        <div className="flex flex-row">
-          <NavItem href="https://github.com/databio/genimtools">
-            <i className="bi bi-github mr-1"></i>
-            GitHub
-          </NavItem>
-          <NavItem href="https://databio.org">
-            <i className="bi bi-building mr-1"></i>
-            Databio
-          </NavItem>
-          <NavItem href="/tokenization">
-            <i className="bi bi-currency-exchange mr-1"></i>
-            Tokenizers
-          </NavItem>
-        </div>
+        <li className="flex">
+          <ul className="flex">
+            <NavItem href="https://github.com/databio/genimtools">
+              <i className="bi bi-github mr-1"></i>
+              GitHub
+            </NavItem>
+            <NavItem href="https://databio.org">
+              <i className="bi bi-building mr-1"></i>
+              Databio
+            </NavItem>
+            <NavItem href="/tokenization">
+              <i className="bi bi-currency-exchange mr-1"></i>
+              Tokenizers
+            </NavItem>
+          </ul>
+        </li>
       </ul>
     </nav>
   );

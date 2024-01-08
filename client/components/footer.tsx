@@ -7,9 +7,6 @@ export default function Footer() {
         <i className="bi bi-building mr-1"></i>
         databio.org
       </Link>
-      <span>
-        build: <span>{process.env.GITHUB_SHA?.slice(0, 7) || 'dev'}</span>
-      </span>
     </footer>
   );
 }

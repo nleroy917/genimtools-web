@@ -82,3 +82,4 @@ jobs:
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           projectName: genimtools
           directory: ./client/out
+          branch: main
