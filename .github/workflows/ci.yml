@@ -49,7 +49,7 @@ jobs:
         with:
           node-version: '20'
           cache: ${{ steps.detect-package-manager.outputs.manager }}
-        working-directory: ./client
+          cache-dependency-path: 'client/package-lock.json'
       - name: Setup wasm-pack
         uses: jetli/wasm-pack-action@v0.4.0
         with:
