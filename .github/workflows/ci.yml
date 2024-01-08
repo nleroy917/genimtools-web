@@ -86,7 +86,7 @@ jobs:
         run: touch ./out/.nojekyll
         working-directory: ./client
       - name: Upload artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v3
         with:
           name: cf-pages
           path: ./client/out
@@ -97,7 +97,7 @@ jobs:
     needs: build
     steps:
       - name: Download artifact
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v3
         with:
           name: cf-pages
           path: ./out
