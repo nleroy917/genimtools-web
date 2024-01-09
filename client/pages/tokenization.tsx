@@ -94,7 +94,7 @@ export default function Tokenization() {
               {tokenizing ? 'Tokenizing...' : 'Tokenize'}
             </button>
             <button
-              className="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded mt-4 disabled:opacity-70 disabled:hover:bg-gray-500"
+              className="shadow-inner bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded mt-4 disabled:opacity-70 disabled:hover:bg-gray-500"
               onClick={() => {
                 navigator.clipboard.writeText(tokens || '');
                 setCopied(true);
